@@ -10,16 +10,7 @@ Do not sell "self-modifying AI" as the primary customer value proposition. Sell 
 A strong first wedge is software engineering / DevOps because repositories, tests, deployments and incident outcomes provide measurable feedback. A second candidate is enterprise workflow agents where actions and outcomes are auditable.
 
 ## MVP
-A versioned adaptive-agent runtime that:
-- stores agent configuration and tool policies as versioned artifacts;
-- observes failures and task outcomes;
-- generates candidate changes;
-- executes candidates in isolated sandboxes;
-- runs regression, security and task-level evaluations;
-- compares candidate against the incumbent;
-- promotes only if predefined thresholds are met;
-- monitors the deployed version;
-- rolls back automatically when safety/performance criteria fail.
+A versioned adaptive-agent runtime that stores agent configuration and tool policies as versioned artifacts; observes failures and task outcomes; generates candidate changes; executes candidates in isolated sandboxes; runs regression, security and task-level evaluations; compares candidate against incumbent; promotes only if predefined thresholds are met; monitors the deployed version; and rolls back automatically when safety/performance criteria fail.
 
 ## First-customer validation
 Target teams already spending significant engineering time maintaining internal agents or automation. Offer a fixed-scope pilot with a measurable baseline and a commitment to prove improvement rather than asking customers to buy a futuristic platform vision.
@@ -40,3 +31,34 @@ These are hypotheses and must be validated rather than assumed.
 
 ## Long-term direction
 If the company develops reliable adaptive agents, the resulting runtime, memory, evaluation, specialization and coordination layers could provide practical infrastructure for the user's longer-term Cognitive Holobiont research. The relationship should be treated as a research hypothesis, not as a guaranteed outcome.
+
+## Revision — 2026-10-15: Narrow the initial wedge
+
+### Competitive reality
+Kore.ai's October 13, 2026 Autoloop announcement makes generic continuous agent optimization an established competitive direction. The initial pitch should not be “we build self-improving agents” or a generic optimizer dashboard. Source: https://www.kore.ai/blog/autoloop-continuous-ai-agent-optimization-for-production
+
+### Updated working hypothesis
+Test a vendor-neutral agent change-control and evidence plane. It versions bounded changes to prompts, skills, routing, tools, workflows or code; evaluates candidates against independent held-out tasks and policy checks; records provenance; and supports staged promotion and rollback.
+
+### Differentiation to prove
+1. Independent acceptance that the change generator cannot edit.
+2. Portable change/evidence artifacts across multiple runtimes.
+3. Policy enforcement outside model instructions.
+4. Calibrated false-promotion and regression measurements.
+5. Accounting for search, evaluation, deployment and rollback costs.
+
+### First validation plan
+- Interview 10–15 teams already operating agents; ask about their last three regressions, detection/recovery time, current tools, budget owner and evidence required for a paid pilot.
+- Select one workflow with objectively testable outcomes rather than targeting every agent category.
+- Run a paid, fixed-scope pilot only after baseline measurement and a policy boundary are agreed.
+- Treat pricing as an experiment; do not infer willingness to pay from positive interviews.
+- Do not expand to a platform/marketplace until a customer repeatedly uses the gate and external contributors can add an adapter or verifier.
+
+### Updated risks
+- Incumbents can bundle optimization, tracing and rollback.
+- A vendor-neutral product may lack a buyer if teams accept provider-specific tooling.
+- Hidden tests can be incomplete; independent graders can still be correlated or gameable.
+- Evaluation itself can create risk if containment is not enforced externally.
+- Customer-specific integrations may prevent attractive margins and ecosystem effects.
+
+The original thesis remains a hypothesis. This revision narrows the experiment; it does not declare product-market fit.
