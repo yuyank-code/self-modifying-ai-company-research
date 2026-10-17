@@ -62,3 +62,23 @@ Test a vendor-neutral agent change-control and evidence plane. It versions bound
 - Customer-specific integrations may prevent attractive margins and ecosystem effects.
 
 The original thesis remains a hypothesis. This revision narrows the experiment; it does not declare product-market fit.
+
+
+## Revision — 2026-10-17: Separate exploration from promotion
+
+### New empirical evidence
+AIDE² reports bounded harness-level self-improvement: seven accepted rewrites among 99 proposals in its main eight-day run, improvement on external benchmarks, and an explicitly inconclusive ignition test. SkillNEO reports task-specific skill-bundle gains, but its final evaluation uses the same task/input instances used during development. These results support bounded adaptation, not unrestricted recursive improvement.
+Sources: https://arxiv.org/abs/2609.26457 and https://arxiv.org/abs/2610.20926
+
+### Architectural decision
+Represent the evolution process as two separate state machines:
+- Exploration frontier: can preserve low-scoring candidates that may contain useful partial repairs.
+- Deployment incumbent: changes only after a stricter gate based on fresh replicated comparisons, untouched input variants, policy compliance, and maintainability.
+
+The CI product should issue a scoped evidence statement about one artifact under one evaluation envelope, not claim the agent is generally “improved.”
+
+### Product-risk update
+SkillNEO's same-instance limitation means a score gain on the evolution task is not enough for a general-purpose certification claim. The product must enforce a frozen artifact and an untouched final evaluation set, and distinguish task-specific tuning from cross-task generalization. Search must account for evaluation budget, failed candidates, and adaptive overfitting.
+
+### Next decision gate
+Build the smallest verifier-backed prototype and compare greedy, elitist, and non-elitist search under matched budgets. If unseen-input gains or incremental value over existing CI/evaluation tooling are not demonstrated, narrow or abandon the wedge. Customer willingness to pay remains unvalidated.

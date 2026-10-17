@@ -40,3 +40,27 @@ Sources: https://www.anthropic.com/research/investigating-unintended-model-actio
 ### Platform lesson
 NVIDIA Dynamo v1.4.0's reported contribution activity and integration breadth illustrate that infrastructure platforms compound through stable interfaces, production integrations, observability, compatibility and contributor ecosystems. An agent-change platform needs similar ecosystem behavior; an SDK by itself is insufficient.
 Source: https://docs.nvidia.com/dynamo/dev/reference/releases/v1-4-0
+
+
+## 2026-10-17 — Recursive harness improvement and non-elitist skill evolution
+
+### AIDE²
+The AIDE² paper reports a fixed-budget, two-loop system that rewrites an agent harness. Its main trajectory accepted 7 of 99 rewrites and raised the selection grade from 0.703 to 0.778; two additional runs accepted 2 and 4 rewrites. It reports transfer to ALE-Bench, MLE-Bench, FML-Bench and WeatherBench 2. The separate ignition experiment is explicitly inconclusive. The evolved harness uses bandit-like strategy allocation, forking after stagnation, compact role-specific context, and conditional failure memory. Most proposed changes were rejected; the authors report a buggy/inactive statistical safeguard and increased code complexity. Do not equate harness-level improvement with weight-level or unrestricted recursive self-improvement.
+Sources: https://arxiv.org/abs/2609.26457 and https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement
+
+### SkillNEO
+SkillNEO separates the current deployment skill from candidates eligible for further edits. Across 86 SkillsBench tasks, GPT-5.4 Mini reward rose from 49.1% to 66.4%, but development and final evaluation used the same task/input instances. Cross-model reuse on those same tasks is promising, not proof of unseen-task transfer. The authors call for unseen-instance evaluation and shared-library research. Some evolved skills still fail domain constraints despite local schema/feasibility checks.
+Source: https://arxiv.org/abs/2610.20926
+
+### Design principle
+Use non-elitist exploration and conservative promotion. Preserve candidate lineage, traces, edit rationale and failed candidates; keep the deployable incumbent separate. Require matched budgets, fresh replication, untouched test variants, independent policy checks, cost accounting and maintainability assessment before promotion.
+
+### Evaluation risk
+Repeatedly exposing aggregate validation scores to an outer optimizer can create adaptive overfitting even when private test examples are hidden. Reserve an untouched final set and measure transfer on new inputs/tasks. Task success and policy compliance must be separate axes; policy violations cannot be compensated by aggregate reward.
+
+### Open questions
+- Can non-elitist search beat greedy and elitist baselines under matched budgets?
+- Do evolved skills generalize to unseen variants and a shared cross-task library?
+- What is the cost per accepted improvement and cost per held-out gain?
+- Can existing CI/evaluation products already produce the evidence bundle with equivalent quality?
+- Can evolved code remain maintainable enough for production?
