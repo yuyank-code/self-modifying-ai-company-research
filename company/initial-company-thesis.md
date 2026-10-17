@@ -82,3 +82,11 @@ SkillNEO's same-instance limitation means a score gain on the evolution task is 
 
 ### Next decision gate
 Build the smallest verifier-backed prototype and compare greedy, elitist, and non-elitist search under matched budgets. If unseen-input gains or incremental value over existing CI/evaluation tooling are not demonstrated, narrow or abandon the wedge. Customer willingness to pay remains unvalidated.
+
+
+## Revision — 2026-10-17 addendum: Generic assurance is not enough
+
+ST-WebAgentBench demonstrates why policy-compliant completion should be measured separately from nominal task success. A trace-based assurance methodology also already proposes contract-carrying traces, replay, fault injection, and action mediation, although it has not yet reported a full empirical prototype study. Therefore a generic evidence ledger or contract schema is not, by itself, a moat.
+Sources: https://d3ccyth396mz21.cloudfront.net/publications/st-webagentbench-a-benchmark-for-evaluating-safety-and-trustworthiness-in-web-agents--1 and https://arxiv.org/abs/2603.18096
+
+Differentiation must be demonstrated as incremental value over baseline CI, existing evaluation/observability tools, and runtime-policy controls. Candidate forms include domain-specific verifiers, cross-runtime promotion evidence, lower-cost reproducible regression testing, or a workflow-specific outcome that incumbents do not already provide. If the comparative test shows no meaningful incremental value, change the wedge rather than rebrand generic assurance.

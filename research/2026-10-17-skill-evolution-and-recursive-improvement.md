@@ -125,3 +125,21 @@ These methods may eventually contribute infrastructure for adaptive memory, skil
 - ST-WebAgentBench: https://d3ccyth396mz21.cloudfront.net/publications/st-webagentbench-a-benchmark-for-evaluating-safety-and-trustworthiness-in-web-agents--1
 - Agent evaluation survey (ACL Findings 2026): https://aclanthology.org/2026.findings-acl.1330/
 - Trace-based assurance framework: https://arxiv.org/abs/2603.18096
+
+
+## 8. Additional assurance evidence and competitive overlap
+
+### ST-WebAgentBench
+IBM Research's ICLR 2026 paper evaluates 375 web-agent tasks carrying 3,057 policies and proposes Completion under Policy (CuP), which credits only task completions that satisfy all applicable policies. Across three open agents, reported average CuP was less than two-thirds of nominal completion rate. This supports separating task completion from policy compliance; it does not establish the same ratio for every agent or production domain.
+Source: https://d3ccyth396mz21.cloudfront.net/publications/st-webagentbench-a-benchmark-for-evaluating-safety-and-trustworthiness-in-web-agents--1
+
+### Trace-based assurance framework
+A March 2026 methodology paper proposes Message-Action Traces with step/trace contracts, deterministic replay, budgeted counterexample search, fault injection at service/retrieval/memory boundaries, and runtime action mediation. The authors explicitly state that the paper is a framework/methodology and does not yet provide a full empirical prototype evaluation.
+Source: https://arxiv.org/abs/2603.18096
+
+### Agent evaluation survey
+The ACL Findings 2026 survey identifies cost-efficiency, safety, robustness, and fine-grained scalable evaluation as open evaluation gaps.
+Source: https://aclanthology.org/2026.findings-acl.1330/
+
+### Competitive implication
+The general concept of traceable, contract-based agent assurance is already present in academic work, and commercial vendors cover portions of tracing, evaluation, runtime policy, and optimization. A generic trace ledger is therefore not a sufficient differentiation claim. The MVP must show a concrete incremental outcome—such as a cross-runtime promotion decision that catches a failure missed by baseline tooling, a domain-specific verifier, or a materially lower-cost reproducible regression workflow. The experiment should include a baseline condition to measure this incremental value.

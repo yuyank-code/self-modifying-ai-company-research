@@ -64,3 +64,17 @@ Repeatedly exposing aggregate validation scores to an outer optimizer can create
 - What is the cost per accepted improvement and cost per held-out gain?
 - Can existing CI/evaluation products already produce the evidence bundle with equivalent quality?
 - Can evolved code remain maintainable enough for production?
+
+
+## 2026-10-17 addendum — Policy-compliant completion and assurance overlap
+
+ST-WebAgentBench (ICLR 2026) reports 375 tasks with 3,057 policies and proposes Completion under Policy (CuP). Across three evaluated open web agents, average CuP was below two-thirds of nominal completion rate. This is benchmark-specific but supports treating policy compliance as a hard, separate axis rather than folding it into a weighted task score.
+Source: https://d3ccyth396mz21.cloudfront.net/publications/st-webagentbench-a-benchmark-for-evaluating-safety-and-trustworthiness-in-web-agents--1
+
+A trace-based assurance paper proposes contract-enriched Message-Action Traces, replay, budgeted counterexample search, fault injection at service/retrieval/memory boundaries, and action mediation. It explicitly describes itself as a methodology whose full empirical prototype evaluation remains future work.
+Source: https://arxiv.org/abs/2603.18096
+
+The ACL Findings 2026 agent-evaluation survey identifies cost-efficiency, safety, robustness, and fine-grained scalable evaluation as open problems.
+Source: https://aclanthology.org/2026.findings-acl.1330/
+
+Commercial implication: generic traceability/contract checks alone are unlikely to be a defensible wedge. Require a comparative baseline and prove an incremental failure class, lower cost, better reproducibility, or vertical-specific business outcome.
