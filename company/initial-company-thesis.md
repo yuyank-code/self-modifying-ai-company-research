@@ -90,3 +90,24 @@ ST-WebAgentBench demonstrates why policy-compliant completion should be measured
 Sources: https://d3ccyth396mz21.cloudfront.net/publications/st-webagentbench-a-benchmark-for-evaluating-safety-and-trustworthiness-in-web-agents--1 and https://arxiv.org/abs/2603.18096
 
 Differentiation must be demonstrated as incremental value over baseline CI, existing evaluation/observability tools, and runtime-policy controls. Candidate forms include domain-specific verifiers, cross-runtime promotion evidence, lower-cost reproducible regression testing, or a workflow-specific outcome that incumbents do not already provide. If the comparative test shows no meaningful incremental value, change the wedge rather than rebrand generic assurance.
+
+
+## Revision — 2026-10-19: Diagnosis, search, and evaluator quality
+
+### Revised technical thesis
+The near-term capability to test is diagnosis-first, budget-aware improvement with independent promotion evidence. Recent work on SpecForge, SpecRSI, and AGO AI Quality Gate suggests three distinct problems: search over modifications without discarding useful partial candidates; respect dependencies so local fixes do not create regressions; and qualify the evaluator before its score is used for release decisions.
+
+### Candidate product boundary
+Keep the first product as a CI-native change-evidence gate for one bounded agent workflow. Integrate existing tracing and runtime controls; do not rebuild generic observability, identity, or sandboxing. The defensible value must be a measured reduction in a specific failure class, lower review cost, or more reliable promotion decisions.
+
+### Mandatory evaluator qualification
+Every evaluator/judge should have a versioned qualification profile tied to a domain and decision threshold. Measure discrimination, calibration, confidence intervals, false acceptance, false rejection, and per-domain variation against independent reference labels. Well-formed judge output is not evidence of judge accuracy. When evaluator quality is insufficient, the gate must return REVIEW/INSUFFICIENT-EVIDENCE rather than silently promote.
+
+### Search and change semantics
+Maintain a candidate archive separate from the production incumbent. Explore multiple branches and permit speculative drafting, but do not treat predictions or incomplete checks as evidence. Promotion requires complete, scoped, provenance-checked evidence. Track dependencies between specifications, tools, modules, and downstream behavior.
+
+### Updated falsification criteria
+Narrow or abandon the certification-gate thesis if a controlled comparison against ordinary CI, existing evaluation/observability products, and runtime policy tools finds no material incremental failure detection or decision-quality improvement at acceptable integration and evaluation cost. Do not claim recursive improvement if only external specifications, prompts, or harnesses change; report the exact modification layer.
+
+### Research status
+This addendum is a strategic synthesis of public papers and vendor positioning, not an executed prototype or customer-validation result. No willingness-to-pay evidence has yet been collected.
